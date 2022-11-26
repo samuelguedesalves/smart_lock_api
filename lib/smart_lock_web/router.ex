@@ -15,10 +15,15 @@ defmodule SmartLockWeb.Router do
   end
 
   scope "/", SmartLockWeb do
-    pipe_through :browser
+    pipe_through [:browser, :api]
 
     get "/", PageController, :index
+    get "/api/user/:rfid", UsersController, :index
   end
+
+  # scope "/", SmartLockWeb do
+  #   pipe_through :api
+  # end
 
   # Other scopes may use custom stacks.
   # scope "/api", SmartLockWeb do
