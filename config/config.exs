@@ -18,6 +18,11 @@ config :smart_lock, SmartLockWeb.Endpoint,
   pubsub_server: SmartLock.PubSub,
   live_view: [signing_salt: "ciPRyK3H"]
 
+# Secret key. You can use `mix guardian.gen.secret` to get one
+config :smart_lock, SmartLockWeb.AuthGuardian,
+  issuer: "smart_lock",
+  secret_key: "4bsxqvz/dtGwDJ7nawgD3HDiOIQveniXBJx6H4ojFYAcnh5EB0g3396SKQext3Rr"
+
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails
